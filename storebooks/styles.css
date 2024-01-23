@@ -1,0 +1,17 @@
+body {
+}
+h1 {
+  text-align: center;
+}
+
+#book-image {
+  justify-content: center;
+  gap: 20px;
+}
+img {
+  max-width: 200px;
+}
+
+.pointer-image {
+    cursor: pointer;
+}
