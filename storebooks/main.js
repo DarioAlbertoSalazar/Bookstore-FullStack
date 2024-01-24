@@ -20,6 +20,7 @@ fetch(books_url)
 
 function onImageClick(id) {
   const getBookDataUrl = `http://localhost:3000/getbook/${id}`;
+  let strDesc = "";
   fetch(getBookDataUrl)
     .then((res) => {
       if (!res.ok) {
@@ -29,5 +30,15 @@ function onImageClick(id) {
     })
     .then((data) => {
       console.log(data);
+      const descriptionContainer = document.getElementById("description");
+      strDesc += `<img src=${data[0].image} alt="">`;
+      strDesc += `<h2>${data[0].title}</h2>`;
+      strDesc += `<p>${data[0].description}</p>`;
+      strDesc += `<p>Pages: ${data[0].num_pages}</p>`;
+      strDesc += `<p>Published year: ${data[0].published_year}</p>`;
+      strDesc += `<p>Editorial: ${data[0].editorial}</p>`;
+      strDesc += `<p>Author: ${data[0].first_name} ${data[0].last_name}</p>`;
+
+      descriptionContainer.innerHTML = strDesc;
     });
 }

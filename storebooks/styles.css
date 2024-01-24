@@ -1,5 +1,4 @@
-body {
-}
+
 h1 {
   text-align: center;
 }
@@ -14,4 +13,10 @@ img {
 
 .pointer-image {
     cursor: pointer;
+}
+
+#description {
+  margin-top: 40px;
+  align-items: center;
+  text-align: center;
 }
