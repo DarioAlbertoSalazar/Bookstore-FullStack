@@ -12,7 +12,7 @@ fetch(books_url)
     let strImage = "";
     for (let obj of data) {
       if (obj.image) {
-        strImage += `<img class="pointer-image" onClick="onImageClick(${obj.id})" src=${obj.image}/>`;
+        strImage += `<img class="pointer-image" onClick="onImageClick(${obj.id})" src=${obj.image} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"/>`;
       }
     }
     images.innerHTML = strImage;
@@ -31,13 +31,13 @@ function onImageClick(id) {
     .then((data) => {
       console.log(data);
       const descriptionContainer = document.getElementById("description");
-      strDesc += `<img src=${data[0].image} alt="">`;
       strDesc += `<h2>${data[0].title}</h2>`;
+      strDesc += `<img src=${data[0].image} alt="">`;
       strDesc += `<p>${data[0].description}</p>`;
-      strDesc += `<p>Pages: ${data[0].num_pages}</p>`;
-      strDesc += `<p>Published year: ${data[0].published_year}</p>`;
+      strDesc += `<p>Paginas: ${data[0].num_pages}</p>`;
+      strDesc += `<p>Año de publicacion: ${data[0].published_year}</p>`;
       strDesc += `<p>Editorial: ${data[0].editorial}</p>`;
-      strDesc += `<p>Author: ${data[0].first_name} ${data[0].last_name}</p>`;
+      strDesc += `<p>Autor: ${data[0].first_name} ${data[0].last_name}</p>`;
 
       descriptionContainer.innerHTML = strDesc;
     });

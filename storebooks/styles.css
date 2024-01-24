@@ -1,11 +1,17 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
 
-h1 {
-  text-align: center;
+nav { 
+  margin-bottom: 20px;
 }
 
 #book-image {
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
 }
 img {
   max-width: 200px;
@@ -16,7 +22,5 @@ img {
 }
 
 #description {
-  margin-top: 40px;
-  align-items: center;
   text-align: center;
 }
