@@ -1,3 +1,3 @@
-let sqlLogin = "lobo4516"
+let sqlLogin = "" // set SQL Password
 
 module.exports = sqlLogin
